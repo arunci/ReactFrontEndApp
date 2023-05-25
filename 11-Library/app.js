@@ -36,11 +36,57 @@ class Media {
   }
 }
 
-const myMedia = new Media("Moby Dick");
-console.log(myMedia.title);
-console.log(myMedia.isCheckedOut);
-myMedia.addRating(5);
-myMedia.addRating(3);
-myMedia.addRating(4);
-myMedia.addRating(1);
-console.log(myMedia.getAverageRating());
+class Book extends Media {
+  constructor(title, author, pages) {
+    super(title);
+    this._author = author;
+    this._pages = pages;
+  }
+
+  get author() {
+    return this._author;
+  }
+
+  get pages() {
+    return this._pages;
+  }
+}
+
+class Movie extends Media {
+  constructor(title, director, runtime) {
+    super(title);
+    this._director = director;
+    this._runtime = runtime;
+  }
+
+  get director() {
+    return this._director;
+  }
+
+  get runtime() {
+    return this._runtime;
+  }
+}
+
+const historyOfEverything = new Book(
+  "A Short History of Nearly Everything",
+  "Bill Byrson",
+  544
+);
+
+historyOfEverything.toggleCheckOutStatus();
+console.log(historyOfEverything.isCheckedOut);
+historyOfEverything.addRating(4);
+historyOfEverything.addRating(5);
+historyOfEverything.addRating(4);
+
+console.log(historyOfEverything.getAverageRating());
+
+const speed = new Movie("Speed", "Jan de Bont", 116);
+speed.toggleCheckOutStatus();
+console.log(historyOfEverything.isCheckedOut);
+speed.addRating(1);
+speed.addRating(1);
+speed.addRating(5);
+
+console.log(speed.getAverageRating());
