@@ -24,11 +24,11 @@ class Media {
   }
 
   getAverageRating() {
-    const averageRating =
+    return (
       this._ratings.reduce(
         (accumulator, currentValue) => accumulator + currentValue
-      ) / this._ratings.length;
-    return averageRating;
+      ) / this._ratings.length
+    );
   }
 
   addRating(rating) {
