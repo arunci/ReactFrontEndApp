@@ -82,4 +82,4 @@ const alSmith = new HighSchool("Al E. Smith", 415, [
   "Track and Field",
 ]);
 
-console.log(alSmith.sportsTeam)
+console.log(alSmith.sportsTeam);
