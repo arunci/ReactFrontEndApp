@@ -15,4 +15,9 @@ const changeToFunkyColor = (domElement) => {
   domElement.style.background = `rgb(${r}, ${g}, ${b})`;
 };
 
-export { toogleHiddenElement, changeToFunkyColor };
+const resources = {
+  toogleHiddenElement,
+  changeToFunkyColor,
+};
+
+export default resources;
