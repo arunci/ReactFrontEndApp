@@ -1,50 +1,50 @@
-html{
+html {
     height: 100%;
     background-color: rgb(18, 24, 42);
     color: white;
     font-family: 'Helvetica', sans-serif;
 }
 
-body{
+body {
     height: 100%;
 }
 
-main{
+main {
     display: flex;
     margin: 15% 2%;
 }
 
-section{
+section {
     width: 100%;
     border: 1px solid white;
     padding: 12px;
 }
 
-h3{
+h3 {
     height: 2em;
 }
 
-.option{
+.option {
     margin-bottom: 0.5em;
 }
 
-input{
+input {
     margin-right: 7px;
 }
 
-#roleInputs{
+#roleInputs {
     flex-grow: 1;
 }
 
-#companyInputs{
+#companyInputs {
     flex-grow: 1;
 }
 
-#resultsContainer{
+#resultsContainer {
     flex-grow: 2;
 }
 
-input{
+input {
     background-color: rgb(18, 24, 42);
     border-color: white;
 }
