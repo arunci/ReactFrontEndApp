@@ -1,6 +1,5 @@
-const formatNumber = (num) =>
-{
-    return num.toLocaleString("en-US")
-}
+const formatNumber = (num) => {
+  return num.toLocaleString("en-US");
+};
 
-export { formatNumber }
+export { formatNumber };
