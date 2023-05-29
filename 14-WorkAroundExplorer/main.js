@@ -6,6 +6,7 @@ import {
   getAverageSalaryByCompany,
   getSalaryAtCompany,
 } from "./modules/workAroundModel.js";
+import {formatNumber} from "./modules/utilities.js";
 
 // TODO: Get the companies and roles using the salaryData module.
 const companies = getCompanies();
@@ -63,22 +64,22 @@ function updateResults() {
   }
 
   // TODO: Use the workAroundModule functions to calculate the needed data.
-  const averageSalaryByRole = getAverageSalaryByRole(role);
-  const averageSalaryByCompany = getAverageSalaryByCompany(company);
+  const averageSalaryByRole = Number(getAverageSalaryByRole(role));
+  const averageSalaryByCompany = Number(getAverageSalaryByCompany(company));
   const salary = getSalaryAtCompany(role, company);
-  const industryAverageSalary = getIndustryAverageSalary();
+  const industryAverageSalary = Number(getIndustryAverageSalary());
 
   // Render them to the screen.
   document.getElementById(
     "salarySelected"
-  ).innerText = `The salary for ${role}s at ${company} is \$${salary}`;
+  ).innerText = `The salary for ${role}s at ${company} is \$${formatNumber(salary)}`;
   document.getElementById(
     "salaryAverageByRole"
-  ).innerText = `The industry average salary for ${role} positions is \$${averageSalaryByRole}`;
+  ).innerText = `The industry average salary for ${role} positions is \$${formatNumber(averageSalaryByRole)}`;
   document.getElementById(
     "salaryAverageByCompany"
-  ).innerText = `The average salary at ${company} is \$${averageSalaryByCompany}`;
+  ).innerText = `The average salary at ${company} is \$${formatNumber(averageSalaryByCompany)}`;
   document.getElementById(
     "salaryAverageIndustry"
-  ).innerText = `The average salary in the Tech industry is \$${industryAverageSalary}`;
+  ).innerText = `The average salary in the Tech industry is \$${formatNumber(industryAverageSalary)}`;
 }
